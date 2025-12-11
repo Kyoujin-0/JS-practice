@@ -87,7 +87,11 @@
             margin-top: 20px;
             color: white;
         }
-        #author
+        #author {
+            position: relative;
+            float: right;
+            bottom: 15px;
+        }
 
         /* ====== RESPONSIVE ====== */
         @media (max-width: 600px) {
@@ -106,7 +110,7 @@
 }
 
 .switch {
-  position: relative;
+  position: absolute;
   width: 70px;
   height: 70px;
   background-color: rgb(99, 99, 99);
@@ -118,7 +122,8 @@
   justify-content: center;
   border: 2px solid rgb(126, 126, 126);
   box-shadow: 0px 0px 3px rgb(2, 2, 2) inset;
-  margin-left: 0px;
+  top:45px;
+  right: 20px;
 }
 .switch svg {
   width: 1.2em;
