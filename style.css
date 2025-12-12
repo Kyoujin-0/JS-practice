@@ -44,7 +44,6 @@
             font-size: 1.05rem;
         }
 
-        /* ====== GALLERY ====== */
         .gallery {
             display: flex;
             justify-content: center;
@@ -67,7 +66,6 @@
             box-shadow: 0 14px 30px rgba(0,0,0,0.15);
         }
 
-        /* ====== LISTS ====== */
         ol, ul {
             margin-left: 25px;
             font-size: 1.05rem;
@@ -78,7 +76,6 @@
             padding-left: 6px;
         }
 
-        /* ====== CARD STYLE SECTIONS ====== */
         .section-card {
             background: #797979;
             padding: 25px;
@@ -93,7 +90,6 @@
             bottom: 15px;
         }
 
-        /* ====== RESPONSIVE ====== */
         @media (max-width: 600px) {
             .gallery img {
                 width: 100%;
