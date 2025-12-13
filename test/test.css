@@ -11,18 +11,16 @@ body {
     line-height: 1.5;
 }
 
-/* Container */
 .container {
     width: 95%;
     max-width: 900px;
     margin: 20px auto;
     padding: 30px;
-    background: #ffffff;
+    background: #71c2dd;
     border: 3px dashed #ffffff;
     border-radius: 4px;
 }
 
-/* Titles */
 h1 {
     text-align: left;
     font-size: 2.2rem;
@@ -43,9 +41,9 @@ p, li {
 }
 
 .section-card {
-    background: #f1f1f1;
+    background: #95d0d6;
     padding: 15px;
-    border: 2px dotted #cfcfcf;
+    border: 2px dotted #151414;
     margin-top: 15px;
 }
 
@@ -73,6 +71,3 @@ p, li {
     transition: transform 0.2s;
 }
 
-.gallery img:hover {
-    transform: rotate(3deg) scale(1.05);
-}
