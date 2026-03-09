@@ -1,43 +1,24 @@
-const toggle = document.querySelector(".switch")
-const body = document.querySelector("body")
-const container = document.querySelector(".container")
-const title = document.querySelector("#title")
-const subTitle = document.querySelectorAll("#subTitle")
-const sectionCard = document.querySelectorAll(".section-card")
+const btn = document.querySelector("#btn");
+const text = document.querySelector("#text");
+const input = document.querySelector("input");
 
-let darkMode = true
+let item1 = document.querySelector("#item1");
+let item2 = document.querySelector("#item2");
+let item3 = document.querySelector("#item3");
+let item4 = document.querySelector("#item4");
+let item5 = document.querySelector("#item5");
 
-toggle.addEventListener("click", ()=> {
+const items = [
 
-    if(darkMode) {
-        darkMode = false
-    body.style.background = "#ecececff"
-    container.style.background = "white"
-    title.style.color = "black"
+item1 = "Kiyotaka Ayanokoji",
+item2 = "Cid Kagenou",
+item3 = "Hachiman Hikigaya",
+item4 = "Raiden SHogun",
+item5 = "Hitori Bochi"
 
-    subTitle.forEach(sub => {
-        sub.style.color = "black"
-    })
-    
-    sectionCard.forEach(card => {
-        card.style.color = "black"
-        card.style.background = "#fbfafaff"
-    })
-    }
-    else {
-        darkMode = true
-    body.style.background = "#000000"
-    container.style.background = "rgb(54, 54, 54)"
-    title.style.color = "white"
+]
 
-    subTitle.forEach(sub => {
-        sub.style.color = "white"
-    })
-    
-    sectionCard.forEach(card => {
-        card.style.color = "white"
-        card.style.background = "#797979"
-    })
-    }
+input.addEventListener("input", ()=> {
+    text.textContent = input.value;
 
-})
+});

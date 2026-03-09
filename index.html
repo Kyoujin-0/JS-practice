@@ -3,55 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Barangay 188 - Official Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary: #003366; --secondary: #f4f4f4; --accent: #FFD700; --text: #333; --white: #fff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--text); background: var(--white); }
+        nav { background: var(--primary); color: var(--white); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .logo { font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        .logo i { color: var(--accent); }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: var(--white); text-decoration: none; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
+        .cta-btn { background: var(--accent); color: var(--primary); padding: 0.5rem 1.2rem; border-radius: 5px; text-decoration: none; font-weight: 700; }
+        .hamburger { display: none; cursor: pointer; font-size: 1.5rem; }
+        .hero { height: 80vh; background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url('https://images.unsplash.com/photo-1577416412292-76403059928b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: var(--white); padding: 0 20px; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin-bottom: 2rem; }
+        .hero-buttons { display: flex; gap: 1rem; }
+        .btn { padding: 1rem 2rem; border-radius: 5px; text-decoration: none; font-weight: 600; transition: 0.3s; }
+        .btn-primary { background: var(--accent); color: var(--primary); }
+        .btn-outline { border: 2px solid var(--white); color: var(--white); }
+        .btn-primary:hover { background: #e6c200; }
+        .btn-outline:hover { background: var(--white); color: var(--primary); }
+        .services { padding: 4rem 5%; background: var(--secondary); text-align: center; }
+        .section-title { margin-bottom: 3rem; color: var(--primary); font-size: 2rem; position: relative; display: inline-block; }
+        .section-title::after { content: ''; display: block; width: 50%; height: 3px; background: var(--accent); margin: 10px auto 0; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .service-card { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; }
+        .service-card:hover { transform: translateY(-10px); }
+        .service-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; }
+        .news { padding: 4rem 5%; }
+        .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .news-card { border: 1px solid #eee; border-radius: 8px; overflow: hidden; }
+        .news-img { height: 200px; background-size: cover; background-position: center; }
+        .news-content { padding: 1.5rem; }
+        .date { font-size: 0.85rem; color: #777; margin-bottom: 0.5rem; display: block; }
+        .news-content h3 { margin-bottom: 1rem; color: var(--primary); }
+        .read-more { color: var(--primary); text-decoration: none; font-weight: 600; }
+        .leadership { background: var(--primary); color: var(--white); padding: 4rem 5%; text-align: center; }
+        .leader-card { background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 10px; display: inline-block; max-width: 400px; margin-top: 2rem; }
+        .leader-img { width: 150px; height: 150px; border-radius: 50%; background-color: #ddd; margin: 0 auto 1rem; border: 4px solid var(--accent); object-fit: cover; }
+        footer { background: #1a1a1a; color: #ccc; padding: 3rem 5%; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+        .footer-col h4 { color: var(--white); margin-bottom: 1rem; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 0.5rem; }
+        .footer-col a { color: #ccc; text-decoration: none; }
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid #333; font-size: 0.9rem; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 70px; right: 0; background: var(--primary); width: 100%; text-align: center; padding: 1rem 0; }
+            .nav-links.active { display: flex; }
+            .hamburger { display: block; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
 <body>
 
-    <input id="checkbox" type="checkbox" />
-<label class="switch" for="checkbox">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="slider">
-    <path
-      d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V256c0 17.7 14.3 32 32 32s32-14.3 32-32V32zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"
-    ></path>
-  </svg>
-</label>
-
-<div class="container">
-
-    <h1 id="title">About Me</h1>
-
-    <div class="gallery">
-        <img src="media/picture1.jpg">
-        <img src="media/picture 2.webp">
-        <img src="media/picture3.jpg">
-    </div>
-
-    <div class="section-card">
-        <p>Your efforts will never betray you, but they can always come betray your dreams. Not all dreams will come true through effort, actually, most of them won’t even come true. But if you tried your best, you can take solace in that.</p>
-        <p id="author">-A naive self-satisfaction</p>
-    </div>
-
-    <h2 id="subTitle">Who I Am</h2>
-    <div class="section-card">
-        <p>My name is Godyvir H. Binalay. There isn’t much to say about me, but I suppose this introduction requires that I say something. People expect a neat little summary of who you are, your interests, your goals, your strengths. I was genuinely just trying to make this longer since I don't have anything to say, but maybe it’s easier to give them what they want than to explain why you don’t have an answer.</p>
-    </div>
-
-    <h2 id="subTitle">What Resonates With Me</h2>
-    <div class="section-card">
-        <ul>
-            <li>Life is mostly about trying things out and figuring out what works. Games, coding, and music are part of that process for me. Games are not just a way to pass the time; they’re a mix of challenge and distraction. They were a drug of silence and a peace that hooks me; it makes me drown but it doesn’t hurt my lungs. I was fascinated by games, so I chose to take this course, and maybe you could even see me one day creating a game too, as my project or as an activity for a school requirement.</li>
-            <li>Coding is different. Coding is where things actually get built. It can be frustrating, and sometimes nothing works the way it should. I don’t necessarily enjoy coding, but I’ve realized it was something that just needs to be done and something that I must excel at since I already put myself into this situation. Anyways, seeing a program do what it’s supposed to do is satisfying. It’s a quiet kind of reward that doesn’t need applause.</li>
-            <li>Music, on the other hand, serves a slightly different purpose. Sometimes it’s just background, but often it’s a way to shut down overthinking. Listening to something loud, simple, or even absurdly catchy can completely numb the brain for a while, which is convenient when my thoughts start spiraling. In other words, it’s a built-in dumb mode switch. It makes me feel relaxed at times or motivated when I need to push through.</li>
+    <nav>
+        <div class="logo"><i class="fas fa-landmark"></i> Barangay 188</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#leadership">Leadership</a></li>
+            <li><a href="#contact" class="cta-btn">Report Incident</a></li>
         </ul>
-    </div>
+        <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    </nav>
 
-    <div class="section-card">
-        <p>This page isn’t a resume or a list of accomplishments. It’s a snapshot of what takes up a few hours of my day and keeps things moving. Games, coding, and music aren’t everything about me, but they’re part of the structure that organizes how I spend my time. If someone has been capable of reading all this nonsense and managed to pay attention to such useless messages, I’ll give you a reward: here’s a piece of knowledge, saying that if you change, the world changes with you is a lie. It’s just a convenient lie forced on you, just to make you compromise. There’s no grand narrative here, no big story. Just a few pieces that make up a regular part of life, and a few images to show them.</p>
-    </div>
+    <section class="hero" id="home">
+        <h1>Welcome to Barangay 188</h1>
+        <p>Serving our community with integrity, transparency, and dedication. Your safety and well-being are our top priority.</p>
+        <div class="hero-buttons">
+            <a href="#services" class="btn btn-primary">Our Services</a>
+            <a href="#contact" class="btn btn-outline">Contact Us</a>
+        </div>
+    </section>
 
-</div>
+    <section class="services" id="services">
+        <h2 class="section-title">Community Services</h2>
+        <div class="service-grid">
+            <div class="service-card"><i class="fas fa-id-card"></i><h3>Resident ID</h3><p>Apply for a new Barangay ID or renew your existing one.</p></div>
+            <div class="service-card"><i class="fas fa-file-signature"></i><h3>Barangay Clearance</h3><p>Get your clearance for employment or school enrollment.</p></div>
+            <div class="service-card"><i class="fas fa-balance-scale"></i><h3>Peace & Order</h3><p>Report incidents or request security assistance.</p></div>
+            <div class="service-card"><i class="fas fa-baby"></i><h3>Civil Registry</h3><p>Assistance in processing birth and death certificates.</p></div>
+        </div>
+    </section>
 
+    <section class="news" id="news">
+        <div style="text-align: center;"><h2 class="section-title">Latest Updates</h2></div>
+        <div class="news-grid">
+            <div class="news-card">
+                <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="news-content">
+                    <span class="date">October 24, 2023</span>
+                    <h3>Community Clean-up Drive</h3>
+                    <p>Join us this Saturday for our monthly eco-friendly clean-up drive.</p>
+                    <a href="#" class="read-more">Read More &rarr;</a>
+                </div>
+            </div>
+            <div class="news-card">
+                <div class="news-img" style="background-image: url('https://scontent.fmnl17-1.fna.fbcdn.net/v/t39.30808-6/649214952_1459574942198721_8288050664425786480_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeEOcee3JjmX9u90wJbgj_W9gHA_Py5UGB-AcD8_LlQYH5CM5e-1qorFwjpYAMlnD53kEmSfyf536cYijHIfBNp_&_nc_ohc=NnE29RoJd4EQ7kNvwFTqAhE&_nc_oc=AdnIi9TWDO7oAUHCnptX0awWioxkuGzQHgfpfZK0wTE1gITRwz9390DdFhO3hM3yzFE&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&_nc_gid=_YlC4NnwdN_tGmlddbtK7g&_nc_ss=8&oh=00_AfyBhDfZE4mDgAK6POpa-y-O96TPCCD18PUoI1AQlFAbGg&oe=69B47377');"></div>
+                <div class="news-content">
+                    <span class="date">March 13 2026</span>
+                    <h3>Free Anti Rabies</h3>
+                    <p>As an acknowledgement of rabies awareness month we encourage to vacinate your pets</p>
+                    <a href="#" class="read-more">Read More &rarr;</a>
+                </div>
+            </div>
+            <div class="news-card">
+                <div class="news-img" style="background-image: url('https://scontent.fmnl17-1.fna.fbcdn.net/v/t39.30808-6/638219645_921423883733377_6855752031128078873_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeG4KHeuXq0Ov7BUHS_rRsjzA5-xBkejdEEDn7EGR6N0QbWINlb-aNeqASp5OAG6IbFuxMWIOYnW-noGKT3KfiJz&_nc_ohc=caRUI4rdHMQQ7kNvwEbob63&_nc_oc=AdmCy2ybP1HS2jE64YqJ6klHLJwoRW2qxZSB1Ymr0FWY0gML8jGpslvmmLOGf2vvgYA&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&_nc_gid=WgednSq1WT6aQ6pfHLCX3Q&_nc_ss=8&oh=00_AfzMn0unCF6yWyAt5A5Ku4kFfEy9RsI_GS_mBSvtweUqlQ&oe=69B47556');"></div>
+                <div class="news-content">
+                    <span class="date">February 21, 2026</span>
+                    <h3>Voter's Registration</h3>
+                    <p>Get a voter's registration, available for barangay 178 - 188</p>
+                    <a href="#" class="read-more">Read More &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="leadership" id="leadership">
+        <h2 class="section-title">Barangay Officials</h2>
+        <div class="leader-card">
+            <img src="https://scontent.fmnl17-8.fna.fbcdn.net/v/t39.30808-6/484321782_978314121167342_3464761610033215390_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeFfKMBLjgS6vap1qbiKENujhBgtiNtb5RaEGC2I21vlFgrsq6-GTSQ1nDQv4Us0ozqhBxW2UCNlviNnvQLx3iOQ&_nc_ohc=nkUqDK7NFj4Q7kNvwGz3ZDx&_nc_oc=Adky0UAmK7XJisXSdMhpis_wmiC4EcVg5RPrjtPTI45LXCS8bdfzToarBMF8OmYfJKg&_nc_zt=23&_nc_ht=scontent.fmnl17-8.fna&_nc_gid=8Ehj7nln8HLtxRME5S1j6A&_nc_ss=8&oh=00_AfxluL6CwGPBEUuzMAJvkCuKwG0kkrhjzzRO4HasZKI3Uw&oe=69B43B5A" alt="Captain" class="leader-img">
+            <h3>MA. ELISA L. CHAN</h3>
+            <p>Barangay Captain</p>
+            <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.9;">"Serving the people with heart."</p>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Barangay 188</h4>
+                <p>Official website of Barangay 188. Dedicated to serving the community.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#news">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fas fa-phone"></i> (02) 123-4567</li>
+                    <li><i class="fas fa-envelope"></i> info@barangay188.gov.ph</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Main Plaza, City</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div style="font-size: 1.5rem; display: flex; gap: 1rem;">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Barangay 188. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
 </body>
-<script src="script.js"></script>
 </html>

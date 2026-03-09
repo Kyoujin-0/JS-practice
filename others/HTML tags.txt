@@ -1,0 +1,179 @@
+# ✅   Complete HTML Tag List (HTML5)  
+
+##   1. Main Structure  
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <body>
+
+
+##   2. Document Metadata  
+
+    <title>
+    <meta>
+    <link>
+    <style>
+    <base>
+
+
+##   3. Sections  
+
+    <header>
+    <footer>
+    <nav>
+    <main>
+    <section>
+    <article>
+    <aside>
+    <h1> to <h6>
+    <hgroup>
+
+
+##   4. Grouping Content  
+
+    <div>
+    <p>
+    <hr>
+    <pre>
+    <blockquote>
+    <ol>
+    <ul>
+    <li>
+    <dl>
+    <dt>
+    <dd>
+    <figure>
+    <figcaption>
+
+
+##   5. Text-level Semantics  
+
+    <a>
+    <em>
+    <strong>
+    <big>
+    <small>
+    <s>
+    <cite>
+    <q>
+    <dfn>
+    <abbr>
+    <ruby>
+    <rt>
+    <rp>
+    <data>
+    <time>
+    <code>
+    <var>
+    <samp>
+    <kbd>
+    <sub>
+    <sup>
+    <i>
+    <b>
+    <u>
+    <mark>
+    <span>
+    <br>
+    <wbr>
+    <ins>
+    <del>
+
+---
+
+##   6. Edits  
+
+   <ins> 
+   <del> 
+
+---
+
+##   7. Embedded Content  
+
+   <img> 
+   <iframe> 
+   <embed> 
+   <object> 
+   <param> 
+   <video> 
+   <audio> 
+   <source> 
+   <track> 
+   <canvas> 
+   <map> 
+   <area> 
+   <svg> 
+   <math> 
+   <picture> 
+
+---
+
+##   8. Tables  
+
+   <table> 
+   <caption> 
+   <thead> 
+   <tbody> 
+   <tfoot> 
+   <tr> 
+   <th> 
+   <td> 
+   <col> 
+   <colgroup> 
+
+---
+
+##   9. Forms  
+
+   <form> 
+   <label> 
+   <input> 
+   <button> 
+   <select> 
+   <datalist> 
+   <optgroup> 
+   <option> 
+   <textarea> 
+   <fieldset> 
+   <legend> 
+   <output> 
+   <progress> 
+   <meter> 
+
+
+##   10. Interactive Elements  
+
+<details>
+<summary>
+<dialog>
+
+
+##   11. Web Components  
+
+<template>
+<slot>
+(Custom elements using  <my-element>  etc.)
+
+
+##   12. Scripting  
+
+<script>
+<noscript>
+
+
+# ✅   Deprecated / Obsolete Tags (Don't Use)  
+
+Still good to know for reading old code:
+
+<acronym>
+<applet>
+<big>
+<center>
+<font>
+<frame>
+<frameset>
+<noframes>
+<tt>
+<marquee>
+<blink> (not official but exists in old browsers)
